@@ -17,4 +17,9 @@ class PlacesController < ApplicationController
     # redirect user
     redirect_to "/places"
   end
+
+  def show
+    @place = Place.find_by({"id" => params["id"]})
+  end
+
 end
