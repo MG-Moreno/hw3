@@ -19,7 +19,11 @@ class PlacesController < ApplicationController
   end
 
   def show
+    #find a Place
     @place = Place.find_by({"id" => params["id"]})
+
+    #Find ALL entries for ONE place 
+    @entries = Entry.where({"place_id" => params["id"]})
   end
 
 end
